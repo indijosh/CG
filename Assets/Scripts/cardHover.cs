@@ -9,7 +9,6 @@ public class cardHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     public void OnPointerEnter(PointerEventData eventData)
     {
         Debug.Log("Pointer enter " + gameObject.name);
-        this.
     }
 
     public void OnPointerExit(PointerEventData eventData)

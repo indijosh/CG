@@ -1,0 +1,12 @@
+Library
+Temp
+*.csproj
+*.pidb
+*.unityproj
+*.sln
+*.userprefs
+Debug
+/playerinfo.xml
+UnityVS.spacegame.v11.suo
+/*.suo
+Library/
