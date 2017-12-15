@@ -6,6 +6,8 @@ using UnityEngine;
 public class GridInitialization : MonoBehaviour {
 	public GameObject gridMesh;
     public GameObject forestNoTile;
+	public GameObject stoneNoTile;
+	public GameObject ironNoTile;
 
 	public int xSize;
 	public int ySize;
@@ -44,11 +46,25 @@ public class GridInitialization : MonoBehaviour {
                 //Spawn grass
 				if (perlinCoord > .19f && perlinCoord < .59f)
 				{
-                    if(perlinCoord > .30 && perlinCoord < .35)
+					//Spawn trees
+                    if(perlinCoord > .30 && perlinCoord < .34)
                     {
                         GameObject forestObject = Instantiate(forestNoTile, new Vector3(x, 0, y), Quaternion.Euler(new Vector3(-90, 0, 0)));
                     }
-                    gridObject.GetComponent<Renderer>().material = mapMaterials[1];
+
+					//Spawn Rocks
+					if(perlinCoord > .34 && perlinCoord < .35)
+					{
+						GameObject stoneObject = Instantiate(stoneNoTile, new Vector3(x, 0, y), Quaternion.Euler(new Vector3(-90, 0, 0)));
+					}
+
+					//Spawn Iron
+					if (perlinCoord > .35 && perlinCoord < .36)
+					{
+						GameObject ironObject = Instantiate(ironNoTile, new Vector3(x, 0, y), Quaternion.Euler(new Vector3(-90, 0, 0)));
+					}
+
+					gridObject.GetComponent<Renderer>().material = mapMaterials[1];
 				}
 
                 //spawn mountain

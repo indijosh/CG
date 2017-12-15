@@ -46,11 +46,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\CameraMove.cs" />
      <Compile Include="Assets\Scripts\GridInitialization.cs" />
      <Compile Include="Assets\Scripts\PerlinNoiseGeneration.cs" />
      <Compile Include="Assets\Scripts\cardHover.cs" />
      <Compile Include="Assets\Scripts\draggable.cs" />
      <Compile Include="Assets\Scripts\dropZone.cs" />
+     <None Include="Assets\Shaders\grid.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Apps/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
