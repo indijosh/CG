@@ -4,6 +4,7 @@
 	{
 		_Color("Color", Color) = (1,1,1,1)
 		_MainTex("Albedo (RGB)", 2D) = "white" {}
+		_BumpMap("Bumpmap", 2D) = "bump" {}
 		_Glossiness("Smoothness", Range(0,1)) = 0
 		_Metallic("Metallic", Range(0,1)) = 0.0
 		_GridStep("Grid size", Float) = 5
@@ -22,10 +23,12 @@
 #pragma target 3.0
 
 		sampler2D _MainTex;
+		sampler2D _BumpMap;
 
 	struct Input
 	{
 		float2 uv_MainTex;
+		float2 uv_BumpMap;
 		float3 worldPos;
 	};
 
@@ -48,6 +51,7 @@
 		c.rgb = lerp(c.rgb, float3(.1,.1,.1), grid);
 
 		o.Albedo = c.rgb;
+		o.Normal = UnpackNormal (tex2D (_BumpMap, IN.uv_BumpMap));
 		// Metallic and smoothness come from slider variables
 		o.Metallic = _Metallic;
 		o.Smoothness = _Glossiness;
